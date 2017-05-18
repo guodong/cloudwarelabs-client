@@ -193,7 +193,8 @@
       '39': '65363', // RIGHT ARROW CHROME
       '37': '65361', // LEFT ARROW CHROME
       '38': '65362', // UP ARROW CHROME
-      '40': '65364' // DOWN ARROW CHROME
+      '40': '65364', // DOWN ARROW CHROME
+      '91': '65506', // set osx cmd to shift
     };
 
     function buildASCIIToXKeyMap(XKeysMap, min) {
@@ -214,7 +215,12 @@
       keyCode = exceptionKeys[keyCode];
     var key = keyMap[keyCode];
     if (key === undefined || key === null)
-      key = 0;
+      key = 62; // shift
+    if (keyCode == 219) {
+      key = 34;
+    } else if (keyCode === 221) {
+      key = 35
+    }
     return key;
   }
 })($);

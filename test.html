@@ -12,6 +12,7 @@
 </head>
 <body>
 <button onclick="test()">test</button>
+<button onclick="fs()">fullscreen</button>
 <script
   src="http://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -20,21 +21,22 @@
 <div id="container" style="width: 1440px; height: 900px;"></div>
 <script>
   CL.apiUrl = 'http://api.cloudwarelabs.org/v1';
-  CL.token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMzBmNmNlOC1iY2NjLTRkMDEtOTEwZi1jN2Y0MjZhYzVlYWUiLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvdjFcL3Rva2VuIiwiaWF0IjoxNDk1MDM4MjU3LCJleHAiOjE0OTUxMjQ2NTcsIm5iZiI6MTQ5NTAzODI1NywianRpIjoiUkxzOEVRaThzZDdEUmtmRCJ9.FGgFQT3avkolUXvBLTtj2V7wmCrJY7AqxO4m4nqPeRc';
+  CL.token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NGEwNTQxZC0zZGNlLTRjNzItODlkNy1hOTBjNTRkOTIyODQiLCJpc3MiOiJodHRwOlwvXC9hcGkuY2xvdWR3YXJlbGFicy5vcmdcL3YxXC90b2tlbiIsImlhdCI6MTQ5NTExOTEyMCwiZXhwIjoxNDk1MjA1NTIwLCJuYmYiOjE0OTUxMTkxMjAsImp0aSI6IkxZMmhPOXJLdGY3eWtoWkIifQ.St3-q_zvKKoxAEPX1RU9ldMHkgUS2uaSERU6n4iFoU0';
 
+  var instance = null;
   function test() {
-    CL.createInstance('dcf7ff46-f672-44a3-bf2a-50f115d5a8ea', 'container', function(err, instance) {
+    CL.createInstance('9f8a6d2b-eddf-41f0-bb71-e068d86c7e80', 'container', function(err, inst) {
       if (err) {
         alert('error happen');
         console.log(err);
         return;
       }
+      instance = inst;
 
-      // fullscreen after 8 seconds
-      setTimeout(function() {
-        instance.setFullscreen();
-      }, 8000);
     });
+  }
+  function fs() {
+    instance.setFullscreen();
   }
 </script>
 </body>
