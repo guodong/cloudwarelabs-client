@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<button onclick="test()">test</button>
+<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="cloudwarelabs-client.js"></script>
+<div id="container" style="width: 1440px; height: 900px;"></div>
+<script>
+  CL.apiUrl = 'http://api.cloudwarelabs.org/v1';
+  CL.token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMzBmNmNlOC1iY2NjLTRkMDEtOTEwZi1jN2Y0MjZhYzVlYWUiLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvdjFcL3Rva2VuIiwiaWF0IjoxNDk1MDM4MjU3LCJleHAiOjE0OTUxMjQ2NTcsIm5iZiI6MTQ5NTAzODI1NywianRpIjoiUkxzOEVRaThzZDdEUmtmRCJ9.FGgFQT3avkolUXvBLTtj2V7wmCrJY7AqxO4m4nqPeRc';
+
+  function test() {
+    CL.createInstance('dcf7ff46-f672-44a3-bf2a-50f115d5a8ea', 'container', function(err, instance) {
+      if (err) {
+        alert('error happen');
+        console.log(err);
+        return;
+      }
+
+      // fullscreen after 8 seconds
+      setTimeout(function() {
+        instance.setFullscreen();
+      }, 8000);
+    });
+  }
+</script>
+</body>
+</html>
