@@ -8,6 +8,9 @@
     token: null,
   };
   window.CL = CL;
+  CL.recoverInstance = function(instanceId, domId, callback) {
+
+  };
   CL.createInstance = function(cloudwareId, domId, callback) {
     document.oncontextmenu = function() {
       return false;
@@ -24,7 +27,9 @@
           canvas.webkitRequestFullScreen();
         }
         this.isFullscreen = true;
-      }
+      },
+      ws: '',
+      fsapi: ''
     };
     $.ajax({
       url: this.apiUrl + '/instances',
@@ -122,6 +127,8 @@
           };
           img.src = url;
         };
+        instance.ws = resp.ws;
+        instance.fsapi = resp.fsapi;
         callback(null, instance);
       }
     });
