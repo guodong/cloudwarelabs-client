@@ -18,26 +18,10 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
 <script src="cloudwarelabs-client.js"></script>
-<div id="container" style="width: 1440px; height: 900px;"></div>
+<div data-cloudware-env="terminal" style="width: 1440px; height: 900px;"></div>
+<!--<div data-cloudware-env="terminal" style="width: 1440px; height: 900px;"></div>-->
 <script>
-  CL.apiUrl = 'http://api.cloudwarelabs.org/v1';
-  CL.token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NGEwNTQxZC0zZGNlLTRjNzItODlkNy1hOTBjNTRkOTIyODQiLCJpc3MiOiJodHRwOlwvXC9hcGkuY2xvdWR3YXJlbGFicy5vcmdcL3YxXC90b2tlbiIsImlhdCI6MTQ5NTExOTEyMCwiZXhwIjoxNDk1MjA1NTIwLCJuYmYiOjE0OTUxMTkxMjAsImp0aSI6IkxZMmhPOXJLdGY3eWtoWkIifQ.St3-q_zvKKoxAEPX1RU9ldMHkgUS2uaSERU6n4iFoU0';
 
-  var instance = null;
-  function test() {
-    CL.createInstance('9f8a6d2b-eddf-41f0-bb71-e068d86c7e80', 'container', function(err, inst) {
-      if (err) {
-        alert('error happen');
-        console.log(err);
-        return;
-      }
-      instance = inst;
-
-    });
-  }
-  function fs() {
-    instance.setFullscreen();
-  }
 </script>
 </body>
 </html>
